@@ -12,6 +12,8 @@ import { CartService } from '../cart.service';
 export class GraphicDesignComponent implements OnInit {
   portfolioItems ;
   _albums: any = [] ;
+  imgHeight = 357;
+
   constructor(
     private cartService: CartService,
     private _lightbox: Lightbox,

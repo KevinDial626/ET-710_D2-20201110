@@ -10,12 +10,26 @@ import { CartService } from '../cart.service';
   styleUrls: ['./graphic-design.component.css']
 })
 export class GraphicDesignComponent implements OnInit {
-  portfolioItems;
-
+  portfolioItems ;
+  _albums = [] ;
   constructor(
     private cartService: CartService,
     private _lightbox: Lightbox,
-  ) { }
+  ) {
+ for (let i = 1; i <= 4; i++) {
+      const src = 'demo/img/image' + i + '.jpg';
+      const caption = 'Image ' + i + ' caption here';
+      const thumb = 'demo/img/image' + i + '-thumb.jpg';
+      const album = {
+         src: 'https://d3u4fnct1vpepk.cloudfront.net/website/war2/img/Visionaire.jpg',
+         caption: caption,
+         thumb: thumb
+      };
+ 
+      this._albums.push(album);
+    }
+
+   }
 
   ngOnInit() {
     this.portfolioItems = this.cartService.getPortfolio();
@@ -24,7 +38,8 @@ export class GraphicDesignComponent implements OnInit {
 
   open(index: number): void {
     // open lightbox
-    this._lightbox.open(this.portfolioItems, index);
+
+    this._lightbox.open(this._albums, index);
   }
  
   close(): void {

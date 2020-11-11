@@ -5,6 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { LightboxModule } from 'ngx-lightbox';
+import { DataTablesModule } from 'angular-datatables';
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -20,6 +21,7 @@ import { GraphicDesignComponent } from './graphic-design/graphic-design.componen
   imports: [
     BrowserModule,
     HttpClientModule,
+    DataTablesModule,
     LightboxModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
